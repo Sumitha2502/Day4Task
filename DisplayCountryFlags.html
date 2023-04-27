@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guvi JS Day4Task</title>
+</head>
+<body>
+  <h1>Display country flag</h1> 
+  <script>
+    console.log("Welcome to HTML JS")
+
+    function handleData(){
+    // {
+    // console.log(JSON.parse(this.responseText))
+    //     }
+    let data=JSON.parse(this.responseText)
+    
+    for(e of data){
+        console.log(e.flag)
+    }
+}
+
+        const req=new XMLHttpRequest()
+        req.addEventListener('load',handleData)
+        // req.onload=(res)=>{
+        //     console.log(JSON.parse(res.srcElement.responseText))
+        // }
+        req.open("GET","https://restcountries.com/v3.1/all")
+        req.send()
+  </script> 
+</body>
+</html>
